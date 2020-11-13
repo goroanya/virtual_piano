@@ -58,3 +58,5 @@ packages/react-devtools-scheduling-profiler/dist# See https://help.github.com/ar
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/.idea
