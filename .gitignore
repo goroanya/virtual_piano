@@ -60,3 +60,6 @@ yarn-debug.log*
 yarn-error.log*
 
 /.idea
+server/melody
+
+venv/

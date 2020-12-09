@@ -20,7 +20,7 @@ class RecordButton extends React.Component {
 
         return (
             <div>
-                <button color={btnColor} onClick={this.changeState.bind(this)}>
+                <button style={{width: 30}} color={btnColor} onClick={this.changeState.bind(this)}>
                     {btnColor}
                 </button>
             </div>

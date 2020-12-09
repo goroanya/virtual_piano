@@ -3,23 +3,15 @@ import React from "react";
 class PlayButton extends React.Component {
     constructor(props) {
         super(props);
-
-        this.changePlayingState = props.changePlayingState;
-        this.state = {
-            playingIsOn: false
-        }
-    }
-
-    changeState() {
-        this.changePlayingState();
-        this.setState({playingIsOn: !this.state.playingIsOn})
     }
 
     render() {
+        console.log(this.props.playingIsOn)
+        const btnText = this.props.playingIsOn ? '𝅘𝅥𝅮' : '▶'
         return (
             <div>
-                <button color={'#ff0'} onClick={this.changeState.bind(this)}>
-                    ▶
+                <button style={{width: 30}} onClick={this.props.changePlayingState}>
+                    {btnText}
                 </button>
             </div>
         )

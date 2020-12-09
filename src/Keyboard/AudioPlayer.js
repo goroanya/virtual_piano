@@ -1,37 +1,14 @@
-import SoundFontPlayer from "soundfont-player";
-import AudioContext from "./AudioContext";
-
-const NullSoundFontPlayerNoteAudio = {
-  stop() {}
-};
-
-const NullSoundFontPlayer = {
-  play() {
-    return NullSoundFontPlayerNoteAudio;
-  }
-};
-
 const AudioPlayer = () => {
-  const audioContext = AudioContext && new AudioContext();
+    const Player = {
+        playNote(note) {
+            if (note) {
+                const audio = new Audio('http://127.0.0.1:5000/note/' + note.replace('#', '_'))
+                return audio.play()
+            }
+        }
+    };
 
-  let soundFPlayer = NullSoundFontPlayer;
-
-  const Player = {
-    setInstrument(instrumentName) {
-      SoundFontPlayer.instrument(audioContext, instrumentName)
-        .then(soundFontPlayer => {
-          soundFPlayer = soundFontPlayer;
-        })
-        .catch(e => {
-          soundFPlayer = NullSoundFontPlayer;
-        });
-    },
-    playNote(note) {
-      return soundFPlayer.play(note);
-    }
-  };
-
-  return Player;
+    return Player;
 };
 
 export default AudioPlayer;

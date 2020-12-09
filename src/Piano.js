@@ -26,6 +26,7 @@ const Piano = () => {
     };
 
     const renderPianoKey = ({
+                                note,
                                 isAccidentalNote,
                                 isNotePlaying,
                                 startPlayingNote,
@@ -36,10 +37,7 @@ const Piano = () => {
 
         const eventHandlers = {
             onMouseDown: startPlayingNote,
-            onTouchStart: startPlayingNote,
             onMouseUp: stopPlayingNote,
-            onMouseOut: stopPlayingNote,
-            onTouchEnd: stopPlayingNote
         };
 
         return (

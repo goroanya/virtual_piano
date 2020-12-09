@@ -9,7 +9,6 @@ const InstrumentAudio = ({instrumentName, notes}) => {
 
     useEffect(() => {
         if (instrumentPlayer) {
-            setInstrument();
             playNotes();
         }
     }, [instrumentPlayer]);
@@ -19,10 +18,6 @@ const InstrumentAudio = ({instrumentName, notes}) => {
             playNotes();
         }
     }, [notes]);
-
-    const setInstrument = () => {
-        instrumentPlayer.setInstrument(instrumentName);
-    };
 
     const playNotes = () => {
         if (instrumentPlayer) {
