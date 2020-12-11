@@ -37,7 +37,10 @@ const Piano = () => {
 
         const eventHandlers = {
             onMouseDown: startPlayingNote,
+            onTouchStart: startPlayingNote,
             onMouseUp: stopPlayingNote,
+            onMouseOut: stopPlayingNote,
+            onTouchEnd: stopPlayingNote
         };
 
         return (
